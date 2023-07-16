@@ -1,0 +1,39 @@
+.clients {
+    background-color: #1c1c24;
+}
+
+.section-title .title-wrapper {
+    color: #fff;
+    font-family: var(--font-2);
+    text-align: center;
+    font-size: 36px;
+    font-weight: 100;
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+
+.logos {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0px 128px 40px 128px;
+}
+
+.logos .logo-wrapper {
+    flex-basis: 25%; 
+    box-sizing: border-box; 
+}
+
+.logos .logo-wrapper .logo {
+    width: 300px;
+    opacity: 50%;
+}
+
+.logos .logo-wrapper .logo:hover {
+    border: 3px solid var(--color-1);
+    opacity: 90%;
+}
+
+

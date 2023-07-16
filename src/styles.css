@@ -1,0 +1,186 @@
+ /* CSS */
+ /* ------------------------------------------------------------------- 
+ * ## fonts 
+ * ------------------------------------------------------------------- */
+ @import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Manrope:wght@500;600;700&display=swap");
+
+ :root {
+     --font-1: "Inter", sans-serif;
+     --font-2: "Manrope", sans-serif;
+
+     /* monospace
+     */
+     --font-mono: Consolas, "Andale Mono", Courier, "Courier New", monospace;
+ }
+
+ /* ------------------------------------------------------------------- 
+ * ## colors
+ * ------------------------------------------------------------------- */
+ :root {
+
+     /* color-1(#f26522)
+     * color-2(#035d5c)
+     */
+     --color-1: hsla(19, 89%, 54%, 1);
+     --color-2: hsla(179, 94%, 19%, 1);
+
+     /* theme color variations
+     */
+     --color-1-lightest: hsla(19, 89%, 84%, 1);
+     --color-1-lighter: hsla(19, 89%, 74%, 1);
+     --color-1-light: hsla(19, 89%, 64%, 1);
+     --color-1-dark: hsla(19, 89%, 44%, 1);
+     --color-1-darker: hsla(19, 89%, 34%, 1);
+     --color-1-darkest: hsla(19, 89%, 24%, 1);
+     --color-2-lightest: hsla(179, 94%, 49%, 1);
+     --color-2-lighter: hsla(179, 94%, 39%, 1);
+     --color-2-light: hsla(179, 94%, 29%, 1);
+     --color-2-dark: hsla(179, 94%, 9%, 1);
+     --color-2-darker: hsla(179, 94%, 1%, 1);
+
+     /* feedback colors
+     * color-error(#ffd1d2), color-success(#c8e675), 
+     * color-info(#d7ecfb), color-notice(#fff099)
+     */
+     --color-error: hsla(359, 100%, 91%, 1);
+     --color-success: hsla(76, 69%, 68%, 1);
+     --color-info: hsla(205, 82%, 91%, 1);
+     --color-notice: hsla(51, 100%, 80%, 1);
+     --color-error-content: hsla(359, 50%, 50%, 1);
+     --color-success-content: hsla(76, 29%, 28%, 1);
+     --color-info-content: hsla(205, 32%, 31%, 1);
+     --color-notice-content: hsla(51, 30%, 30%, 1);
+
+     /* shades 
+     * generated using 
+     * Tint & Shade Generator 
+     * (https://maketintsandshades.com/)
+     */
+     --color-black: #000000;
+     --color-gray-19: #161616;
+     --color-gray-18: #2c2c2c;
+     --color-gray-17: #424241;
+     --color-gray-16: #585857;
+     --color-gray-15: #6e6e6d;
+     --color-gray-14: #848383;
+     --color-gray-13: #9a9999;
+     --color-gray-12: #b0afae;
+     --color-gray-11: #c6c5c4;
+     --color-gray-10: #dcdbda;
+     --color-gray-9: #e0dfde;
+     --color-gray-8: #e3e2e1;
+     --color-gray-7: #e7e6e5;
+     --color-gray-6: #eae9e9;
+     --color-gray-5: #eeeded;
+     --color-gray-4: #f1f1f0;
+     --color-gray-3: #f5f4f4;
+     --color-gray-2: #f8f8f8;
+     --color-gray-1: #fcfbfb;
+     --color-white: #ffffff;
+
+     /* text
+     */
+     --color-text: var(--color-gray-19);
+     --color-text-dark: var(--color-black);
+     --color-text-light: var(--color-gray-14);
+     --color-placeholder: var(--color-gray-14);
+
+     /* buttons
+     */
+     --color-btn: var(--color-gray-6);
+     --color-btn-text: var(--color-black);
+     --color-btn-hover: var(--color-gray-8);
+     --color-btn-hover-text: var(--color-gray-19);
+     --color-btn-primary: var(--color-1);
+     --color-btn-primary-text: var(--color-white);
+     --color-btn-primary-hover: var(--color-gray-19);
+     --color-btn-primary-hover-text: var(--color-white);
+     --color-btn-stroke: var(--color-gray-19);
+     --color-btn-stroke-text: var(--color-gray-19);
+     --color-btn-stroke-hover: var(--color-gray-19);
+     --color-btn-stroke-hover-text: var(--color-white);
+ }
+
+ html {
+     line-height: 1.15;
+     font-family: var(--font-1);
+ }
+
+ body {
+     margin: 0;
+ }
+
+ /* Box sizing rules */
+ *,
+ *::before,
+ *::after {
+     box-sizing: border-box;
+ }
+
+ /* Remove default margin */
+ body,
+ h1,
+ h2,
+ h3,
+ h4,
+ p,
+ figure,
+ blockquote,
+ dl,
+ dd {
+     margin: 0;
+ }
+
+ /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ ul[role='list'],
+ ol[role='list'] {
+     list-style: none;
+ }
+
+ /* Set core root defaults */
+ html:focus-within {
+     scroll-behavior: smooth;
+ }
+
+ /* Set core body defaults */
+ body {
+     min-height: 100vh;
+     text-rendering: optimizeSpeed;
+     line-height: 1.5;
+ }
+
+ /* A elements that don't have a class get default styles */
+ a:not([class]) {
+     text-decoration-skip-ink: auto;
+ }
+
+ /* Make images easier to work with */
+ img,
+ picture {
+     max-width: 100%;
+     display: block;
+ }
+
+ /* Inherit fonts for inputs and buttons */
+ input,
+ button,
+ textarea,
+ select {
+     font: inherit;
+ }
+
+ /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+ @media (prefers-reduced-motion: reduce) {
+     html:focus-within {
+         scroll-behavior: auto;
+     }
+
+     *,
+     *::before,
+     *::after {
+         animation-duration: 0.01ms !important;
+         animation-iteration-count: 1 !important;
+         transition-duration: 0.01ms !important;
+         scroll-behavior: auto !important;
+     }
+ }
