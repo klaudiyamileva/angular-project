@@ -4,6 +4,7 @@ import { BlogCatalogComponent } from './blog-catalog/blog-catalog.component';
 import { BlogDetailsComponent } from './blog-details/blog-details.component';
 import { BlogAddComponent } from './blog-add/blog-add.component';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { RouterModule } from '@angular/router';
   ],
   imports: [
     CommonModule,
-    RouterModule
+    RouterModule,
+    FormsModule
   ],
   exports: [
     BlogCatalogComponent,

@@ -88,4 +88,5 @@
 a {
     text-decoration: none;
     font-style: var(--font-2);
+    color: var(--color-1-darkest);
 }

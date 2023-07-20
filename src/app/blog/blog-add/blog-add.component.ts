@@ -6,5 +6,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./blog-add.component.css']
 })
 export class BlogAddComponent {
+  blog: any = {
+    title: '',
+    category: '',
+    link: '',
+    imageUrl: '',
+    content: '',
+  };
 
+  submitForm(form: any) {
+    if (form.valid) {
+      // Handle form submission here
+      console.log('Form submitted successfully!');
+      console.log(this.blog); // Access form data through the blog object
+    }
+  }
 }

@@ -13,6 +13,7 @@ import { OffersComponent } from './offers/offers.component';
 import { BlogModule } from './blog/blog.module';
 import { UserModule } from './user/user.module';
 import { ContactsComponent } from './contacts/contacts.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { ContactsComponent } from './contacts/contacts.component';
     HttpClientModule,
     BlogModule,
     UserModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
