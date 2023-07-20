@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { DEFAULT_EMAIL_DOMAINS } from 'src/app/shared/constants';
+import { validatePasswords } from 'src/app/shared/validators/validate-passwords.validator';
 
 @Component({
   selector: 'app-register',
@@ -11,15 +12,6 @@ export class RegisterComponent {
   passwordsMismatch = false;
 
   validatePasswords(form: any) {
-    const password = form.value.password;
-    const repeatPassword = form.value.repass;
-    this.passwordsMismatch = password !== repeatPassword;
-
-    const control = form.control.get('repass');
-    if (this.passwordsMismatch) {
-      control.setErrors({ mismatch: true });
-    } else {
-      control.setErrors(null);
-    }
+    this.passwordsMismatch = validatePasswords(form);
   }
 }
