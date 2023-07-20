@@ -84,3 +84,8 @@
     background-color: black;
     border: 3px solid black;
 }
+
+a {
+    text-decoration: none;
+    font-style: var(--font-2);
+}

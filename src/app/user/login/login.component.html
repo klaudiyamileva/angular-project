@@ -78,13 +78,12 @@
         </p>
       </ng-container>
 
-      <button
-        [disabled]="form.invalid"
-        type="submit"
-        class="btn"
-      >
-        Login
-      </button>
+      <button [disabled]="form.invalid" type="submit" class="btn">Login</button>
     </form>
+    
+    <div class="text-center">
+      Don't have have an account?
+      <a routerLink="/register">Register here</a>
+    </div>
   </div>
 </div>

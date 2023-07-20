@@ -1,24 +1,109 @@
 <div class="wrapper">
-    <div class="container">
-        <h1 class="heading">Register</h1>
-        <form class="register-form">
-            <div class="section">
-                <label for="username">Username</label>
-                <input type="text" id="username" class="input" placeholder="Username" required>
-            </div>
-            <div class="section">
-                <label for="email">Email</label>
-                <input type="email" id="email" class="input" placeholder="Email" required>
-            </div>
-            <div class="section">
-                <label for="password">Password</label>
-                <input type="password" id="password" class="input" placeholder="Password" required>
-            </div>
-            <div class="section">
-                <label for="repass">Repeat Password</label>
-                <input type="password" id="repass" class="input" placeholder="Repeat Password" required>
-            </div>
-            <button type="submit" class="btn">Register</button>
-        </form>
+  <div class="container">
+    <h1 class="heading">Register</h1>
+    <form class="register-form" #form="ngForm">
+      <div class="section">
+        <label for="username">Username</label>
+        <input
+          #inputUsername="ngModel"
+          ngModel
+          required
+          minlength="4"
+          type="text"
+          id="username"
+          class="input"
+          placeholder="Username"
+          name="username"
+        />
+      </div>
+
+      <ng-container *ngIf="inputUsername.touched">
+        <p class="error" *ngIf="inputUsername.errors?.['required']">
+          Username is required!
+        </p>
+        <p class="error" *ngIf="inputUsername.errors?.['minlength']">
+          Username must be at least
+          {{inputUsername.errors?.['minlength']['requiredLength']}} characters
+          long!
+        </p>
+      </ng-container>
+
+      <div class="section">
+        <label for="email">Email</label>
+        <input
+          #inputEmail="ngModel"
+          ngModel
+          required
+          [appEmail]="appEmailDomains"
+          type="email"
+          id="email"
+          class="input"
+          placeholder="Email"
+          name="email"
+        />
+      </div>
+
+      <ng-container *ngIf="inputEmail.touched">
+        <p class="error" *ngIf="inputEmail.errors?.['required']">
+          Email is required!
+        </p>
+        <p class="error" *ngIf="inputEmail.errors?.['emailValidator']">
+          Email is not valid!
+        </p>
+      </ng-container>
+
+      <div class="section">
+        <label for="password">Password</label>
+        <input
+          #inputPassword="ngModel"
+          ngModel
+          required
+          minlength="4"
+          type="password"
+          id="password"
+          class="input"
+          placeholder="Password"
+          name="password"
+        />
+      </div>
+
+      <ng-container *ngIf="inputPassword.touched">
+        <p class="error" *ngIf="inputPassword.errors?.['required']">
+          Password is required!
+        </p>
+        <p class="error" *ngIf="inputPassword.errors?.['minlength']">
+          Password must be at least
+          {{inputPassword.errors?.['minlength']['requiredLength']}} characters
+          long!
+        </p>
+      </ng-container>
+
+      <div class="section">
+        <label for="repass">Repeat Password</label>
+        <input
+          #inputRepeatPassword="ngModel"
+          ngModel
+          required
+          minlength="4"
+          type="password"
+          id="repass"
+          class="input"
+          placeholder="Repeat Password"
+          name="repass"
+          (ngModelChange)="validatePasswords(form)"
+        />
+      </div>
+
+      <ng-container *ngIf="inputRepeatPassword.touched">
+        <p class="error" *ngIf="passwordsMismatch">Passwords do not match!</p>
+      </ng-container>
+
+      <button [disabled]="form.invalid" type="submit" class="btn">Register</button>
+    </form>
+
+    <div class="text-center">
+      Have an account?
+      <a routerLink="/login">Login here</a>
     </div>
+  </div>
 </div>
