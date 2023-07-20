@@ -184,3 +184,7 @@
          scroll-behavior: auto !important;
      }
  }
+
+ .error {
+    color: var(--color-error-content);
+ }

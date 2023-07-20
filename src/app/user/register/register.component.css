@@ -74,3 +74,13 @@
     background-color: var(--color-1);
     border: 3px solid var(--color-1);
 }
+
+.btn:disabled {
+    cursor: auto;
+    color: var(--color-gray-13);
+}
+
+.btn:disabled:hover {
+    background-color: black;
+    border: 3px solid black;
+}
