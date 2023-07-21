@@ -11,11 +11,15 @@
       <li routerLink="contact"><a>Contact</a></li>
     </ul>
     <ul class="right">
-      <li routerLink="login"><a>Login</a></li>
-      <li routerLink="register"><a>Register</a></li>
+      <span *ngIf="!isAuth()">
+        <li routerLink="login"><a>Login</a></li>
+        <li routerLink="register"><a>Register</a></li>
+      </span>
 
-      <li routerLink="profile"><a>My Profile</a></li>
-      <li routerLink="logout"><a>Logout</a></li>
+      <span *ngIf="isAuth()">
+        <li routerLink="profile"><a>My Profile</a></li>
+        <li (click)="logout()"><a>Logout</a></li>
+      </span>
     </ul>
   </nav>
 </header>

@@ -1,7 +1,7 @@
 <div class="wrapper">
   <div class="container">
     <h1 class="heading">Login</h1>
-    <form class="login-form" #form="ngForm">
+    <form class="login-form" #form="ngForm" (ngSubmit)="onSubmit(form)">
       <div class="section">
         <label for="username">Username</label>
         <input

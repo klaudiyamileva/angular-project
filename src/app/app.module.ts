@@ -14,6 +14,8 @@ import { BlogModule } from './blog/blog.module';
 import { UserModule } from './user/user.module';
 import { ContactsComponent } from './contacts/contacts.component';
 import { FormsModule } from '@angular/forms';
+import { AuthService } from './shared/services/auth.service';
+import { LocalStorageService } from './shared/services/local-storage.service';
 
 @NgModule({
   declarations: [
@@ -33,7 +35,7 @@ import { FormsModule } from '@angular/forms';
     UserModule,
     FormsModule
   ],
-  providers: [],
+  providers: [AuthService, LocalStorageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

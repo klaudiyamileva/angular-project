@@ -1322,10 +1322,12 @@
         users: {
             "35c62d76-8152-4626-8712-eeb96381bea8": {
                 email: "peter@abv.bg",
+                username: "peterpeterson",
                 hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1"
             },
             "847ec027-f659-4086-8032-5173e2f9c93a": {
                 email: "john@abv.bg",
+                username: "johndoe",
                 hashedPassword: "83313014ed3e2391aa1332615d2f053cf5c1bfe05ca1cbcb5582443822df6eb1"
             }
         },
@@ -1333,70 +1335,103 @@
         }
     };
     var seedData = {
-        careers: {
-            "ff436770-76c5-40e2-b231-77409eda7a61": {
-                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
-                "position": "SENIOR FULL-STACK DEVELOPER",
-                "requirements": "Senior-level computer programmers with proficiency in front and back-end systems coding and project management experience with systems administration skills.",
-                "imageUrl": "https://tbcdn.talentbrew.com/company/32443/v2_0/img/ajd/banner-it-v2-sm.jpg",
-                "_createdOn": 1617194128618,
-            },
-            "1840a313-225c-416a-817a-9954d4609f7c": {
-                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
-                "position": "SENIOR JAVA DEVELOPER",
-                "requirements": "A computer programmer with an extreme level of experience and all required skills.",
-                "imageUrl": "https://jsmeprofinit.eu/wp-content/uploads/2022/01/senior-java-developer-1024x683.jpg",
-                "_createdOn": 1617194210928,
-            },
-            "126777f5-3277-42ad-b874-76d043b069cb": {
-                "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
-                "position": "SENIOR FRONT-END WITH REACT.JS",
-                "requirements": "React is one of the most popular and widely used libraries (it's not a framework) for frontend development.",
-                "imageUrl": "https://www.html.it/app/uploads/2022/09/Front-End-Developer-1.jpg",
-                "_createdOn": 1617194295474,
-            }
-        },
+        // careers: {
+        //     "ff436770-76c5-40e2-b231-77409eda7a61": {
+        //         "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+        //         "position": "SENIOR FULL-STACK DEVELOPER",
+        //         "requirements": "Senior-level computer programmers with proficiency in front and back-end systems coding and project management experience with systems administration skills.",
+        //         "imageUrl": "https://tbcdn.talentbrew.com/company/32443/v2_0/img/ajd/banner-it-v2-sm.jpg",
+        //         "_createdOn": 1617194128618,
+        //     },
+        //     "1840a313-225c-416a-817a-9954d4609f7c": {
+        //         "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+        //         "position": "SENIOR JAVA DEVELOPER",
+        //         "requirements": "A computer programmer with an extreme level of experience and all required skills.",
+        //         "imageUrl": "https://jsmeprofinit.eu/wp-content/uploads/2022/01/senior-java-developer-1024x683.jpg",
+        //         "_createdOn": 1617194210928,
+        //     },
+        //     "126777f5-3277-42ad-b874-76d043b069cb": {
+        //         "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
+        //         "position": "SENIOR FRONT-END WITH REACT.JS",
+        //         "requirements": "React is one of the most popular and widely used libraries (it's not a framework) for frontend development.",
+        //         "imageUrl": "https://www.html.it/app/uploads/2022/09/Front-End-Developer-1.jpg",
+        //         "_createdOn": 1617194295474,
+        //     }
+        // },
         blogs: {
             "cc856745-76c5-40e2-b231-77409eda7a61": {
                 "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
-                "title": "Software infrastructure",
-                "content": "Software infrastructure (by which I include everything ending with *aaS, or anything remotely similar to it) is an exciting field, in particular because (despite what the neo-luddites may say) it keeps getting better every year! I love working with something that moves so quickly.",
-                "imageUrl": "https://s7280.pcdn.co/wp-content/uploads/2018/08/PDWO00001130582-Real-User-Monitoring-vs-Synthetic-Monitoring_Whats-The-Difference-700x400.png",
+                "title": "White Turban",
+                "category": "Frontend Design",
+                "link": "https://www.behance.net/",
+                "content": "Odio soluta enim quos sit asperiores rerum rerum repudiandae cum. Vel voluptatem alias qui assumenda iure et expedita voluptatem. Ratione officiis quae.",
+                "imageUrl": "../../../assets/images/folio/white_turban@2x.jpg",
                 "_createdOn": 1617194128618,
             },
             "cc856745-225c-416a-817a-9954d4609f7c": {
                 "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
-                "title": "Web Design Trends for 2023 That You Should Pay Attention To",
-                "content": "The start of a new year is usually a time when we start looking for ways to make something a little better. That something could be our life, work, or what we produce. Web designers, for example, might look for ways to make their designs more interesting or effective.",
-                "imageUrl": "https://bowwe.com/upload/domain/4645/images/053_WebDesignTrends/Article-Cover-Web_Design_Trends-2023.png",
+                "title": "Caffeine & Tulips",
+                "category": "Brand Identity",
+                "link": "https://www.behance.net/",
+                "content": "Odio soluta enim quos sit asperiores rerum rerum repudiandae cum. Vel voluptatem alias qui assumenda iure et expedita voluptatem. Ratione officiis quae.",
+                "imageUrl": "../../../assets/images/folio/caffeine_and_tulips@2x.jpg",
                 "_createdOn": 1617194210928,
             },
             "cc856745-3277-42ad-b874-76d043b069cb": {
-                "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
-                "title": "Welcome to Our New Office",
-                "content": "Our office is more than an office; it's a cafe, arcade, lounge, and entertainment center all in one room. The room is big, the view is great, and it's just ours. We love our office and hope to work from here with joy!",
-                "imageUrl": "https://i.cbc.ca/1.5551309.1588281332!/fileImage/httpImage/distanced-workplace.jpg",
+                "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
+                "title": "Grayscale",
+                "category": "Product Design",
+                "link": "https://www.behance.net/",
+                "content": "Odio soluta enim quos sit asperiores rerum rerum repudiandae cum. Vel voluptatem alias qui assumenda iure et expedita voluptatem. Ratione officiis quae.",
+                "imageUrl": "../../../assets/images/folio/grayscale@2x.jpg",
                 "_createdOn": 1617194295474,
-            }
+            },
+            "cc856745-3277-42ad-b874-99d043b069cb": {
+                "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
+                "title": "Lamp",
+                "category": "E-Commerce",
+                "link": "https://www.behance.net/",
+                "content": "Odio soluta enim quos sit asperiores rerum rerum repudiandae cum. Vel voluptatem alias qui assumenda iure et expedita voluptatem. Ratione officiis quae.",
+                "imageUrl": "../../../assets/images/folio/lamp@2x.jpg",
+                "_createdOn": 1617194295476,
+            },
+            "cc856745-225c-42ad-b874-99d043b069cb": {
+                "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
+                "title": "Tropical",
+                "category": "Frontend Design",
+                "link": "https://www.behance.net/",
+                "content": "Odio soluta enim quos sit asperiores rerum rerum repudiandae cum. Vel voluptatem alias qui assumenda iure et expedita voluptatem. Ratione officiis quae.",
+                "imageUrl": "../../../assets/images/folio/tropical@2x.jpg",
+                "_createdOn": 1617194295479,
+            },
+            "cc856745-325c-42ad-b844-99d043b069cb": {
+                "_ownerId": "847ec027-f659-4086-8032-5173e2f9c93a",
+                "title": "Woodcraft",
+                "category": "E-Commerce",
+                "link": "https://www.behance.net/",
+                "content": "Odio soluta enim quos sit asperiores rerum rerum repudiandae cum. Vel voluptatem alias qui assumenda iure et expedita voluptatem. Ratione officiis quae.",
+                "imageUrl": "../../../assets/images/folio/woodcraft@2x.jpg",
+                "_createdOn": 1617194295489,
+            },
         },
         comments: {
             "ht597853-76c5-40e2-b231-77409eda7a61": {
                 "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
-                "fullName": "Peter Peterson",
+                "username": "peterpeterson",
                 "comment": "Very good blog!",
                 "blogId": "cc856745-76c5-40e2-b231-77409eda7a61",
                 "_createdOn": 1617194128618,
             },
             "ht597853-225c-416a-817a-9954d4609f7c": {
                 "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
-                "fullName": "Peter Peterson",
+                "username": "peterpeterson",
                 "comment": "I will use it!",
                 "blogId": "cc856745-225c-416a-817a-9954d4609f7c",
                 "_createdOn": 1617194210928,
             },
             "ht597853-3277-42ad-b874-76d043b069cb": {
                 "_ownerId": "35c62d76-8152-4626-8712-eeb96381bea8",
-                "fullName": "Peter Peterson",
+                "username": "peterpeterson",
                 "comment": "Looks great!",
                 "blogId": "cc856745-3277-42ad-b874-76d043b069cb",
                 "_createdOn": 1617194295474,
