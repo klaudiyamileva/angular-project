@@ -1,4 +1,3 @@
-// authentication.service.ts
 import { Injectable } from '@angular/core';
 import { post } from '../shared/requester';
 
@@ -30,6 +29,15 @@ export class AuthenticationService {
   }
 
   register(email: string, username: string, password: string) {
-    return post(`${baseUrl}/users/register`, { email, username, password });
+    return post(`${baseUrl}/users/register`, { email, username, password })
+      .then((response) => {
+        const authData = {
+          accessToken: response.accessToken,
+          email: response.email,
+          username: response.username,
+          _id: response._id,
+        };
+        return authData;
+      });
   }
 }

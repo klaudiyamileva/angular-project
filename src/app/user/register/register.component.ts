@@ -28,8 +28,8 @@ export class RegisterComponent {
       const password = form.value.password;
 
       this.authenticationService.register(email, username, password)
-        .then((response) => {
-          this.authService.userLogin(response);
+        .then((authData) => {
+          this.authService.userLogin(authData);
           this.router.navigate(['/home']); 
         })
         .catch((error) => {
