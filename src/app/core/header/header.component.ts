@@ -6,27 +6,29 @@ import { AuthenticationService } from 'src/app/user/authentication.service';
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
-  styleUrls: ['./header.component.css']
+  styleUrls: ['./header.component.css'],
 })
 export class HeaderComponent {
-
-  constructor(private authenticationService: AuthenticationService, private authService: AuthService, private router: Router) {}
+  constructor(
+    private authenticationService: AuthenticationService,
+    private authService: AuthService,
+    private router: Router
+  ) {}
 
   logout(): void {
     const auth = this.authService.authData;
-    this.authenticationService.logout(auth.accessToken)
-    .then(() => {
-      this.authService.userLogout();
-      this.router.navigate(['/home']); 
-    })
-    .catch((error) => {
-      console.error('Logout error:', error);
-      this.router.navigate(['/home']); 
-    })
+    this.authenticationService.logout(auth.accessToken).subscribe(
+      (response: any) => {
+        this.authService.userLogout();
+        this.router.navigate(['/home']);
+      },
+      (error) => {
+        this.router.navigate(['/home']);
+      }
+    );
   }
 
   isAuth(): boolean {
     return this.authService.isAuthenticated;
   }
-
 }

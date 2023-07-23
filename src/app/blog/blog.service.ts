@@ -1,35 +1,36 @@
-import * as request from "../shared/requester";
-import { Blog } from "../types/blog";
+import { Blog } from '../types/blog';
+import * as request from '../shared/requester';
+import { Observable } from 'rxjs';
 
 const baseUrl = 'http://localhost:3030/data/blogs';
 
-export const getOldestBlogs = async (): Promise<Blog[]> => {
-  return request.get(baseUrl, null); // Pass null if no data/query parameters needed
+export const getOldestBlogs = (): Observable<Blog[]> => {
+  return request.get(baseUrl);
 };
 
-export const getLatestBlogs = async (): Promise<Blog[]> => {
+export const getLatestBlogs = (): Observable<Blog[]> => {
   const sorted = encodeURIComponent('_createdOn desc');
-  return request.get(`${baseUrl}?sortBy=${sorted}`, null); // Pass null if no data/query parameters needed
+  return request.get(`${baseUrl}?sortBy=${sorted}`);
 };
 
-export const getBlogById = async (blogId: string): Promise<Blog> => {
+export const getBlogById = (blogId: string): Observable<Blog> => {
   const relations = encodeURIComponent('user=_ownerId:users');
-  return request.get(`${baseUrl}/${blogId}?load=${relations}`, null); // Pass null if no data/query parameters needed
+  return request.get(`${baseUrl}/${blogId}?load=${relations}`);
 };
 
-export const getBlogByOwnerId = async (ownerId: string): Promise<Blog[]> => {
+export const getBlogByOwnerId = (ownerId: string): Observable<Blog[]> => {
   const search = encodeURIComponent(`_ownerId="${ownerId}"`);
-  return request.get(`${baseUrl}/?where=${search}`, null); // Pass null if no data/query parameters needed
+  return request.get(`${baseUrl}/?where=${search}`);
 };
 
-export const createBlog = async (blogData: Blog): Promise<Blog> => {
+export const createBlog = (blogData: Blog): Observable<Blog> => {
   return request.post(baseUrl, blogData);
 };
 
-export const editBlog = async (blogId: string, blogData: Blog): Promise<Blog> => {
+export const editBlog = (blogId: string, blogData: Blog): Observable<Blog> => {
   return request.put(`${baseUrl}/${blogId}`, blogData);
 };
 
-export const deleteBlog = async (blogId: string): Promise<any> => {
-  return request.del(`${baseUrl}/${blogId}`, null); // Pass null if no data/query parameters needed
+export const deleteBlog = (blogId: string): Observable<any> => {
+  return request.del(`${baseUrl}/${blogId}`);
 };

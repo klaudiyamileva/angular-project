@@ -8,12 +8,16 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css']
+  styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
   appEmailDomains = DEFAULT_EMAIL_DOMAINS;
 
-  constructor(private authenticationService: AuthenticationService, private authService: AuthService, private router: Router) {}
+  constructor(
+    private authenticationService: AuthenticationService,
+    private authService: AuthService,
+    private router: Router
+  ) {}
 
   onSubmit(form: NgForm): void {
     if (form.valid) {
@@ -21,15 +25,15 @@ export class LoginComponent {
       const username = form.value.username;
       const password = form.value.password;
 
-      this.authenticationService.login(email, username, password)
-        .then((authData) => {
+      this.authenticationService.login(email, username, password).subscribe(
+        (authData: any) => {
           this.authService.userLogin(authData);
-          this.router.navigate(['/home']); 
-        })
-        .catch((error) => {
-          console.error('Login error:', error);
-          this.router.navigate(['/login']); 
-        });
+          this.router.navigate(['/home']);
+        },
+        (error) => {
+          this.router.navigate(['/login']);
+        }
+      );
     }
   }
 }
