@@ -7,24 +7,9 @@ import { FormsModule } from '@angular/forms';
 import { SharedModule } from '../shared/shared.module';
 import { RouterModule } from '@angular/router';
 
-
-
 @NgModule({
-  declarations: [
-    LoginComponent,
-    RegisterComponent,
-    ProfileComponent
-  ],
-  imports: [
-    CommonModule,
-    FormsModule,
-    SharedModule,
-    RouterModule
-  ],
-  exports: [
-    LoginComponent,
-    RegisterComponent,
-    ProfileComponent
-  ]
+    declarations: [LoginComponent, RegisterComponent, ProfileComponent],
+    imports: [CommonModule, FormsModule, SharedModule, RouterModule],
+    exports: [LoginComponent, RegisterComponent, ProfileComponent],
 })
-export class UserModule { }
+export class UserModule {}

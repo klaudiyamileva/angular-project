@@ -1,25 +1,25 @@
 <header class="header">
-  <div routerLink="home" class="logo">
-    <img src="../../../assets/images/gitlab-logo.png" alt="">
-  </div>
-  <nav>
-    <ul class="left">
-      <li routerLink="home"><a>Home</a></li>
-      <li routerLink="about"><a>About</a></li>
-      <li routerLink="offers"><a>Offers</a></li>
-      <li routerLink="blog"><a>Blog</a></li>
-      <li routerLink="contact"><a>Contact</a></li>
-    </ul>
-    <ul class="right">
-      <span *ngIf="!isAuth()">
-        <li routerLink="login"><a>Login</a></li>
-        <li routerLink="register"><a>Register</a></li>
-      </span>
+    <div routerLink="home" class="logo">
+        <img src="../../../assets/images/gitlab-logo.png" alt="" />
+    </div>
+    <nav>
+        <ul class="left">
+            <li routerLink="home"><a>Home</a></li>
+            <li routerLink="about"><a>About</a></li>
+            <li routerLink="offers"><a>Offers</a></li>
+            <li routerLink="blog"><a>Blog</a></li>
+            <li routerLink="contact"><a>Contact</a></li>
+        </ul>
+        <ul class="right">
+            <span *ngIf="!isAuth()">
+                <li routerLink="login"><a>Login</a></li>
+                <li routerLink="register"><a>Register</a></li>
+            </span>
 
-      <span *ngIf="isAuth()">
-        <li routerLink="profile"><a>My Profile</a></li>
-        <li (click)="logout()"><a>Logout</a></li>
-      </span>
-    </ul>
-  </nav>
+            <span *ngIf="isAuth()">
+                <li routerLink="profile"><a>My Profile</a></li>
+                <li (click)="logout()"><a>Logout</a></li>
+            </span>
+        </ul>
+    </nav>
 </header>

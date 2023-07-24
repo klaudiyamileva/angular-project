@@ -1,48 +1,50 @@
 <div class="wrapper">
-  <div class="container">
-    <h1 class="heading">Contact Us</h1>
-    <form class="register-form" #form="ngForm">
-      <div class="section">
-        <label for="subject">Subject</label>
-        <input
-          #inputSubject="ngModel"
-          ngModel
-          required
-          type="text"
-          id="subject"
-          class="input"
-          placeholder="Subject..."
-          name="subject"
-        />
-      </div>
+    <div class="container">
+        <h1 class="heading">Contact Us</h1>
+        <form class="register-form" #form="ngForm">
+            <div class="section">
+                <label for="subject">Subject</label>
+                <input
+                    #inputSubject="ngModel"
+                    ngModel
+                    required
+                    type="text"
+                    id="subject"
+                    class="input"
+                    placeholder="Subject..."
+                    name="subject"
+                />
+            </div>
 
-      <ng-container *ngIf="inputSubject.touched">
-        <p class="error" *ngIf="inputSubject.errors?.['required']">
-          Subject is required!
-        </p>
-      </ng-container>
+            <ng-container *ngIf="inputSubject.touched">
+                <p class="error" *ngIf="inputSubject.errors?.['required']">
+                    Subject is required!
+                </p>
+            </ng-container>
 
-      <div class="section">
-        <label for="text">Your Text</label>
-        <input
-          #inputText="ngModel"
-          ngModel
-          required
-          type="text"
-          id="text"
-          class="input input-text"
-          placeholder="Write your text here..."
-          name="text"
-        />
-      </div>
+            <div class="section">
+                <label for="text">Your Text</label>
+                <input
+                    #inputText="ngModel"
+                    ngModel
+                    required
+                    type="text"
+                    id="text"
+                    class="input input-text"
+                    placeholder="Write your text here..."
+                    name="text"
+                />
+            </div>
 
-      <ng-container *ngIf="inputText.touched">
-        <p class="error" *ngIf="inputText.errors?.['required']">
-          Text is required!
-        </p>
-      </ng-container>
+            <ng-container *ngIf="inputText.touched">
+                <p class="error" *ngIf="inputText.errors?.['required']">
+                    Text is required!
+                </p>
+            </ng-container>
 
-      <button [disabled]="form.invalid" type="submit" class="btn">Submit</button>
-    </form>
-  </div>
+            <button [disabled]="form.invalid" type="submit" class="btn">
+                Submit
+            </button>
+        </form>
+    </div>
 </div>

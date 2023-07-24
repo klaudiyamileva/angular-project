@@ -1,5 +1,5 @@
 export interface Blog {
-  _id: {
+    _id: string;
     _ownerId: string;
     title: string;
     category: string;
@@ -7,5 +7,4 @@ export interface Blog {
     content: string;
     imageUrl: string;
     _createdOn: number;
-  };
 }

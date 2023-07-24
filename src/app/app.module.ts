@@ -16,26 +16,27 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { FormsModule } from '@angular/forms';
 import { AuthService } from './shared/services/auth.service';
 import { LocalStorageService } from './shared/services/local-storage.service';
+import { BlogService } from './blog/blog.service';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    AboutComponent,
-    ClientsComponent,
-    OffersComponent,
-    ContactsComponent
-  ],
-  imports: [
-    BrowserModule,
-    CoreModule,
-    AppRoutingModule,
-    HttpClientModule,
-    BlogModule,
-    UserModule,
-    FormsModule
-  ],
-  providers: [AuthService, LocalStorageService],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        HomeComponent,
+        AboutComponent,
+        ClientsComponent,
+        OffersComponent,
+        ContactsComponent,
+    ],
+    imports: [
+        BrowserModule,
+        CoreModule,
+        AppRoutingModule,
+        HttpClientModule,
+        BlogModule,
+        UserModule,
+        FormsModule,
+    ],
+    providers: [AuthService, LocalStorageService, BlogService],
+    bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

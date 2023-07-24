@@ -7,20 +7,12 @@ import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 
 @NgModule({
-  declarations: [
-    BlogCatalogComponent,
-    BlogDetailsComponent,
-    BlogAddComponent
-  ],
-  imports: [
-    CommonModule,
-    RouterModule,
-    FormsModule
-  ],
-  exports: [
-    BlogCatalogComponent,
-    BlogDetailsComponent,
-    BlogAddComponent
-  ]
+    declarations: [
+        BlogCatalogComponent,
+        BlogDetailsComponent,
+        BlogAddComponent,
+    ],
+    imports: [CommonModule, RouterModule, FormsModule],
+    exports: [BlogCatalogComponent, BlogDetailsComponent, BlogAddComponent],
 })
-export class BlogModule { }
+export class BlogModule {}

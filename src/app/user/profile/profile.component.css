@@ -84,7 +84,9 @@
     left: 45px;
     color: #fff;
     opacity: 0;
-    transition: opacity 0.3s ease, transform 0.3s ease;
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
     z-index: 2;
 }
 

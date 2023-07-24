@@ -7,48 +7,50 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css'],
+    selector: 'app-register',
+    templateUrl: './register.component.html',
+    styleUrls: ['./register.component.css'],
 })
 export class RegisterComponent {
-  appEmailDomains = DEFAULT_EMAIL_DOMAINS;
-  passwordsMismatch = false;
+    appEmailDomains = DEFAULT_EMAIL_DOMAINS;
+    passwordsMismatch = false;
 
-  constructor(
-    private authenticationService: AuthenticationService,
-    private authService: AuthService,
-    private router: Router
-  ) {}
+    constructor(
+        private authenticationService: AuthenticationService,
+        private authService: AuthService,
+        private router: Router,
+    ) {}
 
-  validatePasswords(form: any) {
-    this.passwordsMismatch = validatePasswords(form);
-  }
-
-  onSubmit(form: NgForm): void {
-    if (form.valid) {
-      const email = form.value.email;
-      const username = form.value.username;
-      const password = form.value.password;
-
-      this.authenticationService.register(email, username, password).subscribe(
-        (authData: any) => {
-          this.authService.userLogin(authData);
-          this.router.navigate(['/home']);
-        },
-        (error) => {
-          this.router.navigate(['/register']);
-        }
-      );
-
-      // .then((authData) => {
-      //   this.authService.userLogin(authData);
-      //   this.router.navigate(['/home']);
-      // })
-      // .catch((error) => {
-      //   console.error('Register error:', error);
-      //   this.router.navigate(['/register']);
-      // });
+    validatePasswords(form: any) {
+        this.passwordsMismatch = validatePasswords(form);
     }
-  }
+
+    onSubmit(form: NgForm): void {
+        if (form.valid) {
+            const email = form.value.email;
+            const username = form.value.username;
+            const password = form.value.password;
+
+            this.authenticationService
+                .register(email, username, password)
+                .subscribe(
+                    (authData: any) => {
+                        this.authService.userLogin(authData);
+                        this.router.navigate(['/home']);
+                    },
+                    (error) => {
+                        this.router.navigate(['/register']);
+                    },
+                );
+
+            // .then((authData) => {
+            //   this.authService.userLogin(authData);
+            //   this.router.navigate(['/home']);
+            // })
+            // .catch((error) => {
+            //   console.error('Register error:', error);
+            //   this.router.navigate(['/register']);
+            // });
+        }
+    }
 }

@@ -6,34 +6,36 @@ import { Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/services/auth.service';
 
 @Component({
-  selector: 'app-login',
-  templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
+    selector: 'app-login',
+    templateUrl: './login.component.html',
+    styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  appEmailDomains = DEFAULT_EMAIL_DOMAINS;
+    appEmailDomains = DEFAULT_EMAIL_DOMAINS;
 
-  constructor(
-    private authenticationService: AuthenticationService,
-    private authService: AuthService,
-    private router: Router
-  ) {}
+    constructor(
+        private authenticationService: AuthenticationService,
+        private authService: AuthService,
+        private router: Router,
+    ) {}
 
-  onSubmit(form: NgForm): void {
-    if (form.valid) {
-      const email = form.value.email;
-      const username = form.value.username;
-      const password = form.value.password;
+    onSubmit(form: NgForm): void {
+        if (form.valid) {
+            const email = form.value.email;
+            const username = form.value.username;
+            const password = form.value.password;
 
-      this.authenticationService.login(email, username, password).subscribe(
-        (authData: any) => {
-          this.authService.userLogin(authData);
-          this.router.navigate(['/home']);
-        },
-        (error) => {
-          this.router.navigate(['/login']);
+            this.authenticationService
+                .login(email, username, password)
+                .subscribe(
+                    (authData: any) => {
+                        this.authService.userLogin(authData);
+                        this.router.navigate(['/home']);
+                    },
+                    (error) => {
+                        this.router.navigate(['/login']);
+                    },
+                );
         }
-      );
     }
-  }
 }

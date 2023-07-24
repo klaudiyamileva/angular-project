@@ -1,11 +1,11 @@
 <section class="blog-section">
-
     <div class="section-header">
         <h3 class="text-title">Recent Blogs</h3>
         <div class="text-section">
             <div class="text-wrapper">
                 <h2 class="text">
-                    Here are some of our favorite projects we have done lately. Feel free to check them out.
+                    Here are some of our favorite projects we have done lately.
+                    Feel free to check them out.
                 </h2>
             </div>
             <div class="desc-wrapper">
@@ -15,84 +15,25 @@
                     recusandae sequi consequatur est dolorum eaque.
                 </p>
             </div>
-            <button (click)="navigateTo('blog/add')" class="add-blog">Add Blog</button>
+            <button (click)="navigateTo('blog/add')" class="add-blog">
+                Add Blog
+            </button>
         </div>
     </div>
 
     <div class="blogs">
         <div class="blogs-wrapper">
-                <article class="blog">
-                    <a class="link">
-                        <div class="image-wrapper">
-                            <img class="image" src="../../../assets/images/folio/white_turban@2x.jpg" alt="">
-                        </div>
-                        <div class="info">
-                            <div class="category">Frontend Design</div>
-                            <h4 class="title">White Turban</h4>
-                        </div>
-                    </a>
-                </article>
-
-                <article class="blog">
-                    <a class="entry-link">
-                        <div class="image-wrapper">
-                            <img src="../../../assets/images/folio/caffeine_and_tulips@2x.jpg" alt="">
-                        </div>
-                        <div class="info">
-                            <div class="category">Brand Identity</div>
-                            <h4 class="title">Caffeine & Tulips</h4>
-                        </div>
-                    </a>
-                </article>
-
-                <article class="blog">
-                    <a class="entry-link">
-                        <div class="image-wrapper">
-                            <img src="../../../assets/images/folio/grayscale@2x.jpg" alt="">
-                        </div>
-                        <div class="info">
-                            <div class="category">Product Design</div>
-                            <h4 class="title">Grayscale</h4>
-                        </div>
-                    </a>
-                </article>
-
-                <article class="blog">
-                    <a class="entry-link">
-                        <div class="image-wrapper">
-                            <img src="../../../assets/images/folio/lamp@2x.jpg" alt="">
-                        </div>
-                        <div class="info">
-                            <div class="category">E-Commerce</div>
-                            <h4 class="title">Lamp</h4>
-                        </div>
-                    </a>
-                </article>
-
-                <article class="blog">
-                    <a class="entry-link">
-                        <div class="image-wrapper">
-                            <img src="../../../assets/images/folio/tropical@2x.jpg" alt="">
-                        </div>
-                        <div class="info">
-                            <div class="category">Frontend Design</div>
-                            <h4 class="title">Tropical</h4>
-                        </div>
-                    </a>
-                </article>
-                
-
-                <article class="blog">
-                    <a class="entry-link">
-                        <div class="image-wrapper">
-                            <img src="../../../assets/images/folio/woodcraft@2x.jpg" alt="">
-                        </div>
-                        <div class="info">
-                            <div class="category">E-Commerce</div>
-                            <h4 class="title">Woodcraft</h4>
-                        </div>
-                    </a>
-                </article>
+            <article *ngFor="let blog of blogs" class="blog">
+                <a class="link">
+                    <div class="image-wrapper">
+                        <img class="image" [src]="blog.imageUrl" alt="" />
+                    </div>
+                    <div class="info">
+                        <div class="category">{{ blog.category }}</div>
+                        <h4 class="title">{{ blog.title }}</h4>
+                    </div>
+                </a>
+            </article>
         </div>
     </div>
-
+</section>

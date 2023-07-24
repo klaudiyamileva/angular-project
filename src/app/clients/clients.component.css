@@ -22,8 +22,8 @@
 }
 
 .logos .logo-wrapper {
-    flex-basis: 25%; 
-    box-sizing: border-box; 
+    flex-basis: 25%;
+    box-sizing: border-box;
 }
 
 .logos .logo-wrapper .logo {
@@ -35,5 +35,3 @@
     border: 3px solid var(--color-1);
     opacity: 90%;
 }
-
-
