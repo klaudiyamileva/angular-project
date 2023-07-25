@@ -5,7 +5,7 @@
             <div class="category">From: {{user?.username}}</div>
 
             <div *ngIf="isOwner" class="buttons">
-                <button class="edit-btn">Edit</button>
+                <button [routerLink]="['/blog', blog?._id, 'edit']" class="edit-btn">Edit</button>
                 <button class="delete-btn">Delete</button>
             </div>
 

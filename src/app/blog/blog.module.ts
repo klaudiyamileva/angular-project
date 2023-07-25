@@ -6,14 +6,16 @@ import { BlogAddComponent } from './blog-add/blog-add.component';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { BlogRoutingModule } from './blog-routing.module';
+import { BlogEditComponent } from './blog-edit/blog-edit.component';
 
 @NgModule({
     declarations: [
         BlogCatalogComponent,
         BlogDetailsComponent,
         BlogAddComponent,
+        BlogEditComponent,
     ],
     imports: [CommonModule, RouterModule, FormsModule, BlogRoutingModule],
-    exports: [BlogCatalogComponent, BlogDetailsComponent, BlogAddComponent],
+    exports: [BlogCatalogComponent, BlogDetailsComponent, BlogAddComponent, BlogEditComponent],
 })
 export class BlogModule {}

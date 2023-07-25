@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { BlogCatalogComponent } from './blog-catalog/blog-catalog.component';
 import { BlogDetailsComponent } from './blog-details/blog-details.component';
 import { BlogAddComponent } from './blog-add/blog-add.component';
+import { BlogEditComponent } from './blog-edit/blog-edit.component';
 
 const routes: Routes = [
     {
@@ -21,12 +22,16 @@ const routes: Routes = [
                 path: ':blogId',
                 component: BlogDetailsComponent,
             },
-        ]
+            {
+                path: ':blogId/edit',
+                component: BlogEditComponent,
+            },
+        ],
     },
 ];
 
 @NgModule({
     imports: [RouterModule.forChild(routes)],
-    exports: [RouterModule]
+    exports: [RouterModule],
 })
-export class BlogRoutingModule { }
+export class BlogRoutingModule {}
