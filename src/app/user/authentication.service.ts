@@ -22,6 +22,7 @@ export class AuthenticationService {
                     accessToken: response.accessToken,
                     email: response.email,
                     username: response.username,
+                    _id: response._id,
                 };
                 return authData;
             }),
@@ -64,6 +65,7 @@ export class AuthenticationService {
                     accessToken: response.accessToken,
                     email: response.email,
                     username: response.username,
+                    _id: response._id,
                 };
                 return authData;
             }),

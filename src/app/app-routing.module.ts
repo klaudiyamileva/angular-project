@@ -29,14 +29,6 @@ const routes: Routes = [
         component: OffersComponent,
     },
     {
-        path: 'blog',
-        component: BlogCatalogComponent,
-    },
-    {
-        path: 'blog/add',
-        component: BlogAddComponent,
-    },
-    {
         path: 'contact',
         component: ContactsComponent,
     },

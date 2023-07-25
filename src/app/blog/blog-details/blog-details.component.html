@@ -1,15 +1,19 @@
 <div class="blog">
     <div class="modal">
-        <img src="../../../assets/images/folio/white_turban@2x.jpg" alt="" />
+        <img src={{blog?.imageUrl}} alt="" />
         <div class="modal-desc">
             <div class="category">From: Username</div>
-            <h5 class="title">White Turban</h5>
-            <div class="category">Frontend Design</div>
-            <a href="https://www.behance.net/" class="btn-link">Project link</a>
+
+            <div class="buttons">
+                <button class="edit-btn">Edit</button>
+                <button class="delete-btn">Delete</button>
+            </div>
+
+            <h5 class="title">{{blog?.title}}</h5>
+            <div class="category">{{blog?.category}}</div>
+            <a href={{blog?.link}} class="btn-link">Project link</a>
             <p class="desc">
-                Odio soluta enim quos sit asperiores rerum rerum repudiandae
-                cum. Vel voluptatem alias qui assumenda iure et expedita
-                voluptatem. Ratione officiis quae.
+                {{blog?.content}}
             </p>
         </div>
 

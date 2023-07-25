@@ -15,19 +15,19 @@ export class BlogCatalogComponent implements OnInit {
     constructor(
         private router: Router,
         private authService: AuthService,
-        private blogService: BlogService,
+        private blogService: BlogService
     ) {}
 
     ngOnInit(): void {
-        this.blogService.getOldestBlogs().subscribe(
-            (result) => {
+        this.blogService.getOldestBlogs().subscribe({
+            next: (result) => {
                 this.blogs = result;
                 console.log(this.blogs);
             },
-            (error) => {
+            error: (error) => {
                 console.log(error);
             },
-        );
+        });
     }
 
     get isAuth(): boolean {

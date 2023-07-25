@@ -24,7 +24,7 @@
     <div class="blogs">
         <div class="blogs-wrapper">
             <article *ngFor="let blog of blogs" class="blog">
-                <a class="link">
+                <a [routerLink]="['/blog', blog._id]" class="link">
                     <div class="image-wrapper">
                         <img class="image" [src]="blog.imageUrl" alt="" />
                     </div>

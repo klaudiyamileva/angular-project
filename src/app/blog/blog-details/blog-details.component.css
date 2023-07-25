@@ -150,3 +150,46 @@
     border: 3px solid black;
     border-radius: 0;
 }
+
+.buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.edit-btn {
+    color: white;
+    border: none;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    background-color: black;
+    letter-spacing: 0.8px;
+    border: 3px solid black;
+}
+
+.edit-btn:hover {
+    color: white;
+    background-color: var(--color-1);
+    border: 3px solid var(--color-1);
+}
+
+.delete-btn {
+    color: white;
+    border: none;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 8px 16px;
+    background-color: black;
+    letter-spacing: 0.8px;
+    border: 3px solid black;
+}
+
+.delete-btn:hover {
+    color: white;
+    background-color: var(--color-1);
+    border: 3px solid var(--color-1);
+}
