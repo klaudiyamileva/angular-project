@@ -58,15 +58,26 @@
 
 .likes {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    width: 200px;
+    width: 300px;
     margin: 0 auto 20px auto;
+    gap: 20px;
+}
+
+.likes a {
+    text-decoration: none;
+    color: black;
+    border: 3px solid black;
+    font-weight: 700;
+    padding: 8px;
 }
 
 .likes-length {
     font-family: var(--font-2);
+    font-weight: 700;
+    font-size: 20px;
 }
 
 .btn-like {
@@ -101,6 +112,24 @@
     justify-content: center;
     font-family: var(--font-1);
     margin-bottom: 40px;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+    margin: 0 auto 20px auto;
+    gap: 20px;
+}
+
+.login a {
+    text-decoration: none;
+    color: black;
+    border: 3px solid black;
+    font-weight: 700;
+    padding: 8px;
 }
 
 .comments .comment {

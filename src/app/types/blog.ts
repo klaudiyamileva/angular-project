@@ -1,3 +1,5 @@
+import { User } from "./user";
+
 export interface Blog {
     _id: string;
     _ownerId: string;
@@ -7,4 +9,5 @@ export interface Blog {
     content: string;
     imageUrl: string;
     _createdOn: number;
+    user: User;
 }

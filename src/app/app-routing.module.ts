@@ -9,6 +9,7 @@ import { LoginComponent } from './user/login/login.component';
 import { RegisterComponent } from './user/register/register.component';
 import { ProfileComponent } from './user/profile/profile.component';
 import { BlogAddComponent } from './blog/blog-add/blog-add.component';
+import { AuthActivate } from './shared/guards/auth.activate';
 
 const routes: Routes = [
     {
@@ -31,6 +32,7 @@ const routes: Routes = [
     {
         path: 'contact',
         component: ContactsComponent,
+        // canActivate: [AuthActivate],
     },
     {
         path: 'login',
@@ -43,6 +45,7 @@ const routes: Routes = [
     {
         path: 'profile',
         component: ProfileComponent,
+        canActivate: [AuthActivate],
     },
 ];
 

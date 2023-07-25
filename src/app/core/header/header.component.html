@@ -8,7 +8,7 @@
             <li routerLink="about"><a>About</a></li>
             <li routerLink="offers"><a>Offers</a></li>
             <li routerLink="blog"><a>Blog</a></li>
-            <li routerLink="contact"><a>Contact</a></li>
+            <li [routerLink]="isAuth() ? 'contact' : 'login'"><a>Contact</a></li>
         </ul>
         <ul class="right">
             <span *ngIf="!isAuth()">
