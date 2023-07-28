@@ -13,6 +13,7 @@ import { User } from 'src/app/types/user';
 export class BlogDetailsComponent implements OnInit {
     blog: Blog | undefined;
     user: User | undefined;
+    id = this.acticatedRoute.snapshot.params['blogId'];
 
     constructor(
         private blogService: BlogService,
@@ -38,9 +39,8 @@ export class BlogDetailsComponent implements OnInit {
     }
 
     fetchBlog(): void {
-        const id = this.acticatedRoute.snapshot.params['blogId'];
         
-        this.blogService.getBlogById(id).subscribe({
+        this.blogService.getBlogById(this.id).subscribe({
             next: (result) => {
                 this.blog = result;
                 this.user = result.user;

@@ -13,7 +13,6 @@ export class BlogDeleteComponent {
     constructor(
       private blogService: BlogService,
       private acticatedRoute: ActivatedRoute,
-      // private authService: AuthService,
       private router: Router
   ) {}
 

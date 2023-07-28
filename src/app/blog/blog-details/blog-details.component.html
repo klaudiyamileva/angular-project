@@ -22,14 +22,7 @@
             </p>
         </div>
 
-        <div class="likes">
-            <div class="likes-length">8 likes</div>
-            <div *ngIf="!isOwner && isAuth" class="btn-like">Like</div>
-            <div *ngIf="!isAuth" class="login">
-                If you want to like this blog
-            </div>
-            <a *ngIf="!isAuth" routerLink="/login">Login Here</a>
-        </div>
+        <app-blog-likes [isAuth]="isAuth" [isOwner]="isOwner"></app-blog-likes>
 
         <div class="title-comments">Recent Comments</div>
 

@@ -1,0 +1,64 @@
+.likes {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+    margin: 0 auto 20px auto;
+    gap: 20px;
+}
+
+.likes a {
+    text-decoration: none;
+    color: black;
+    border: 3px solid black;
+    font-weight: 700;
+    padding: 8px;
+}
+
+.likes-length {
+    font-family: var(--font-2);
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.btn-like {
+    color: white;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    padding: 8px 20px;
+    background-color: black;
+    letter-spacing: 0.8px;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-like:hover {
+    color: white;
+    background-color: var(--color-1);
+}
+
+.liked {
+    color: white;
+    background-color: var(--color-1);
+    cursor: not-allowed;
+}
+
+.login {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 300px;
+    margin: 0 auto 20px auto;
+    gap: 20px;
+}
+
+.login a {
+    text-decoration: none;
+    color: black;
+    border: 3px solid black;
+    font-weight: 700;
+    padding: 8px;
+}
