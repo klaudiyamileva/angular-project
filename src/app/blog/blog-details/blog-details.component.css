@@ -173,6 +173,16 @@
     border: 3px solid var(--color-1);
 }
 
+.add-comment .comment-btn:disabled {
+    cursor: auto;
+    color: var(--color-gray-13);
+}
+
+.add-comment .comment-btn:disabled:hover {
+    background-color: black;
+    border: 3px solid black;
+}
+
 .add-comment .comment-input {
     padding: 8px 12px;
     width: 60%;

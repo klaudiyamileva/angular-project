@@ -2,10 +2,15 @@
     <div class="modal">
         <img src="{{ blog?.imageUrl }}" alt="" />
         <div class="modal-desc">
-            <div class="category">From: {{user?.username}}</div>
+            <div class="category">From: {{ user?.username }}</div>
 
             <div *ngIf="isOwner" class="buttons">
-                <button [routerLink]="['/blog', blog?._id, 'edit']" class="edit-btn">Edit</button>
+                <button
+                    [routerLink]="['/blog', blog?._id, 'edit']"
+                    class="edit-btn"
+                >
+                    Edit
+                </button>
                 <button class="delete-btn">Delete</button>
             </div>
 
@@ -20,8 +25,10 @@
         <div class="likes">
             <div class="likes-length">8 likes</div>
             <div *ngIf="!isOwner && isAuth" class="btn-like">Like</div>
-            <div *ngIf="!isAuth" class="login">If you want to like this blog </div>
-            <a *ngIf="!isAuth"  routerLink="/login">Login Here</a>
+            <div *ngIf="!isAuth" class="login">
+                If you want to like this blog
+            </div>
+            <a *ngIf="!isAuth" routerLink="/login">Login Here</a>
         </div>
 
         <div class="title-comments">Recent Comments</div>
@@ -44,18 +51,30 @@
         </div>
 
         <div *ngIf="isAuth" class="add-comment">
-            <form>
+            <form #form="ngForm">
                 <input
+                    #inputComment="ngModel"
+                    ngModel
+                    required
+                    name="comment"
                     class="comment-input"
                     type="text"
                     placeholder="Type your comment here..."
                 />
-                <button class="comment-btn">Comment</button>
+                <button [disabled]="form.invalid" class="comment-btn">Comment</button>
             </form>
+
+            <!-- <ng-container *ngIf="inputComment.touched">
+                <p class="error" *ngIf="inputComment.errors?.['required']">
+                    Comment is required!
+                </p>
+            </ng-container> -->
         </div>
 
         <div *ngIf="!isAuth" class="login">
-            <div *ngIf="!isAuth" class="login-text">If you want to add a comment</div>
+            <div *ngIf="!isAuth" class="login-text">
+                If you want to add a comment
+            </div>
             <a *ngIf="!isAuth" routerLink="/login">Login Here</a>
         </div>
     </div>

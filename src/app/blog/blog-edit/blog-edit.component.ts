@@ -1,8 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Blog } from 'src/app/types/blog';
 import { BlogService } from '../blog.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/services/auth.service';
+import { NgForm } from '@angular/forms';
 
 @Component({
     selector: 'app-blog-edit',
@@ -11,45 +12,47 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 })
 export class BlogEditComponent implements OnInit {
     currBlog: Blog | undefined;
-
-    blog: any = {
-        title: '',
-        category: '',
-        link: '',
-        imageUrl: '',
-        content: '',
-    };
+    isDataLoaded: boolean = false;
+    isOwner: boolean = false;
+    blogId: string = '';
 
     constructor(
         private blogService: BlogService,
         private acticatedRoute: ActivatedRoute,
-        private authService: AuthService
+        private authService: AuthService,
+        private router: Router
     ) {}
 
     ngOnInit(): void {
         this.fetchBlog();
+
     }
 
     fetchBlog(): void {
         const id = this.acticatedRoute.snapshot.params['blogId'];
-        
+
         this.blogService.getBlogById(id).subscribe({
             next: (result) => {
                 this.currBlog = result;
-                // this.user = result.user;
-                console.log(this.currBlog);
+                this.isDataLoaded = true;
+
+                if(result.user._id === this.authService.authData._id) {
+                    this.isOwner = true;
+                }
+
+                this.blogId = this.currBlog._id;
             },
             error: (error) => {
                 console.log(error);
-            }
-        })
+            },
+        });
     }
 
-    submitForm(form: any) {
+    submitForm(form: NgForm) {
         if (form.valid) {
-            // Handle form submission here
-            console.log('Form submitted successfully!');
-            console.log(this.blog); // Access form data through the blog object
+            this.blogService.editBlog(this.blogId, form.value).subscribe(() => {
+                this.router.navigate([`/blog/${this.blogId}`]);
+            });
         }
     }
 }

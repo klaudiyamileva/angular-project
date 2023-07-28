@@ -19,7 +19,7 @@ export class BlogCatalogComponent implements OnInit {
     ) {}
 
     ngOnInit(): void {
-        this.blogService.getOldestBlogs().subscribe({
+        this.blogService.getLatestBlogs().subscribe({
             next: (result) => {
                 this.blogs = result;
                 console.log(this.blogs);

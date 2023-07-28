@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { BlogService } from '../blog.service';
+import { Router } from '@angular/router';
 
 @Component({
     selector: 'app-blog-add',
@@ -6,19 +9,13 @@ import { Component } from '@angular/core';
     styleUrls: ['./blog-add.component.css'],
 })
 export class BlogAddComponent {
-    blog: any = {
-        title: '',
-        category: '',
-        link: '',
-        imageUrl: '',
-        content: '',
-    };
+    constructor(private blogService: BlogService, private router: Router) {}
 
-    submitForm(form: any) {
+    submitForm(form: NgForm) {
         if (form.valid) {
-            // Handle form submission here
-            console.log('Form submitted successfully!');
-            console.log(this.blog); // Access form data through the blog object
+            this.blogService.createBlog(form.value).subscribe(() => {
+                this.router.navigate(['/blog']);
+            });
         }
     }
 }

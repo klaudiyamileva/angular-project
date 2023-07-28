@@ -16,7 +16,7 @@
                     name="title"
                     required
                     minlength="3"
-                    [(ngModel)]="blog.title"
+                    ngModel
                     #title="ngModel"
                 />
                 <div *ngIf="title.invalid && (title.dirty || title.touched)">
@@ -41,7 +41,7 @@
                     name="category"
                     required
                     minlength="3"
-                    [(ngModel)]="blog.category"
+                    ngModel
                     #category="ngModel"
                 />
                 <div
@@ -72,7 +72,7 @@
                     name="link"
                     required
                     pattern="https?://.+"
-                    [(ngModel)]="blog.link"
+                    ngModel
                     #link="ngModel"
                 />
                 <div *ngIf="link.invalid && (link.dirty || link.touched)">
@@ -96,7 +96,7 @@
                     name="imageUrl"
                     required
                     pattern="https?://.+"
-                    [(ngModel)]="blog.imageUrl"
+                    ngModel
                     #imageUrl="ngModel"
                 />
                 <div
@@ -123,7 +123,7 @@
                     name="content"
                     required
                     minlength="10"
-                    [(ngModel)]="blog.content"
+                    ngModel
                     #content="ngModel"
                 ></textarea>
                 <div
