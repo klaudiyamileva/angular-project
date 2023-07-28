@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BlogService } from '../blog.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { Blog } from 'src/app/types/blog';
 import { User } from 'src/app/types/user';
@@ -13,15 +13,38 @@ import { User } from 'src/app/types/user';
 export class BlogDetailsComponent implements OnInit {
     blog: Blog | undefined;
     user: User | undefined;
+    isDeleteClicked: boolean  = false;
 
     constructor(
         private blogService: BlogService,
         private acticatedRoute: ActivatedRoute,
-        private authService: AuthService
+        private authService: AuthService,
+        private router: Router
     ) {}
 
     ngOnInit(): void {
         this.fetchBlog();
+    }
+
+    deleteClickHandler(): void {
+        this.isDeleteClicked = true;
+    }
+
+    cancelDeleteHandler(): void {
+        this.isDeleteClicked = false;
+    }
+
+    deleteBlog() {
+        const id = this.acticatedRoute.snapshot.params['blogId'];
+
+        this.blogService.deleteBlog(id).subscribe({
+            next: () => {
+                this.router.navigate([`/blog`]);
+            },
+            error: (error) => {
+                console.log(error);
+            }
+        })
     }
 
     get isAuth(): boolean {
