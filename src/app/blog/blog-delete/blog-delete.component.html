@@ -1,0 +1,17 @@
+<button (click)="deleteClickHandler()" class="delete-btn">
+    Delete
+</button>
+<div *ngIf="isDeleteClicked" class="confirmationBox">
+    <p>Are you sure you want to delete this blog?</p>
+    <div class="buttons">
+        <button (click)="deleteBlog()" class="confirmDelete">
+            Yes
+        </button>
+        <button
+            (click)="cancelDeleteHandler()"
+            class="cancelDelete"
+        >
+            Cancel
+        </button>
+    </div>
+</div>
