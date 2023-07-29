@@ -1612,21 +1612,18 @@
         comments: {
             "ht597853-76c5-40e2-b231-77409eda7a61": {
                 _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-                username: "peterpeterson",
                 comment: "Very good blog!",
                 blogId: "cc856745-76c5-40e2-b231-77409eda7a61",
                 _createdOn: 1617194128618,
             },
             "ht597853-225c-416a-817a-9954d4609f7c": {
                 _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-                username: "peterpeterson",
                 comment: "I will use it!",
                 blogId: "cc856745-225c-416a-817a-9954d4609f7c",
                 _createdOn: 1617194210928,
             },
             "ht597853-3277-42ad-b874-76d043b069cb": {
                 _ownerId: "35c62d76-8152-4626-8712-eeb96381bea8",
-                username: "peterpeterson",
                 comment: "Looks great!",
                 blogId: "cc856745-3277-42ad-b874-76d043b069cb",
                 _createdOn: 1617194295474,

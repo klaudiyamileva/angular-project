@@ -24,47 +24,6 @@
 
         <app-blog-likes [isAuth]="isAuth" [isOwner]="isOwner"></app-blog-likes>
 
-        <div class="title-comments">Recent Comments</div>
-
-        <div class="comments">
-            <div class="comment">
-                <div class="username">Harry</div>
-                <div class="comment-text">I like it a lot!</div>
-            </div>
-
-            <div class="comment">
-                <div class="username">Ivan</div>
-                <div class="comment-text">Very cool!</div>
-            </div>
-
-            <div class="comment">
-                <div class="username">Yordan</div>
-                <div class="comment-text">Super!</div>
-            </div>
-        </div>
-
-        <div *ngIf="isAuth" class="add-comment">
-            <form #form="ngForm">
-                <input
-                    #inputComment="ngModel"
-                    ngModel
-                    required
-                    name="comment"
-                    class="comment-input"
-                    type="text"
-                    placeholder="Type your comment here..."
-                />
-                <button [disabled]="form.invalid" class="comment-btn">
-                    Comment
-                </button>
-            </form>
-        </div>
-
-        <div *ngIf="!isAuth" class="login">
-            <div *ngIf="!isAuth" class="login-text">
-                If you want to add a comment
-            </div>
-            <a *ngIf="!isAuth" routerLink="/login">Login Here</a>
-        </div>
+        <app-blog-comments [isAuth]="isAuth" ></app-blog-comments>
     </div>
 </div>

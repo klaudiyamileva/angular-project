@@ -45,20 +45,22 @@ export class BlogLikesComponent implements OnInit {
 
     hasLiked(): void {
         const currUser = this.authService.authData;
-        this.likesService.getlikeByUserId(currUser._id).subscribe({
-            next: (result) => {
-                if (result.length !== 0) {
-                    const hasLiked = result.find(r => r.blogId === this.id);
-                    console.log(hasLiked);
-                    if (hasLiked) {
-                        this.isLiked = true;
+        if(currUser) {
+            this.likesService.getlikeByUserId(currUser._id).subscribe({
+                next: (result) => {
+                    if (result.length !== 0) {
+                        const hasLiked = result.find(r => r.blogId === this.id);
+                        console.log(hasLiked);
+                        if (hasLiked) {
+                            this.isLiked = true;
+                        }
                     }
+                },
+                error: (error) => {
+                    console.log(error);
                 }
-            },
-            error: (error) => {
-                console.log(error);
-            }
-        })
+            })
+        }
     }
 
     likeBlog() {
