@@ -44,6 +44,7 @@
 
 .buttons {
     margin-top: 12px;
+    gap: 20px;
 }
 
 .btn-link {
@@ -66,13 +67,6 @@
     margin-top: 40px;
     font-size: 14px;
     margin-bottom: 20px;
-}
-
-.buttons {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 20px;
 }
 
 .edit-btn {
