@@ -47,12 +47,14 @@
 
 .login {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     width: 300px;
     margin: 0 auto 20px auto;
     gap: 20px;
+    border: 3px solid black;
+    padding: 12px;
 }
 
 .login a {
@@ -61,4 +63,10 @@
     border: 3px solid black;
     font-weight: 700;
     padding: 8px;
+    width: 70%;
+}
+
+.login a:hover {
+    color: var(--color-1);
+    border: 3px solid var(--color-1);
 }

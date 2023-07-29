@@ -20,6 +20,12 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+.owner {
+    border-bottom: 3px solid var(--color-1);
+    padding-bottom: 12px;
+    font-family: var(--font-2);
+}
+
 .modal-desc {
     margin-top: 20px;
 }
@@ -27,11 +33,17 @@
 .title {
     font-size: 24px;
     margin-bottom: 2px;
+    margin-top: 12px;
 }
 
 .category {
     list-style: none;
     margin-bottom: 32px;
+    font-weight: 500;
+}
+
+.buttons {
+    margin-top: 12px;
 }
 
 .btn-link {

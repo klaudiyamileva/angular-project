@@ -3,6 +3,7 @@ import { BlogCommentsService } from './blog-comments.service';
 import { ActivatedRoute } from '@angular/router';
 import { Comment } from 'src/app/types/comment';
 import { NgForm } from '@angular/forms';
+import { NewComment } from 'src/app/types/newComment';
 
 @Component({
     selector: 'app-blog-comments',
@@ -33,7 +34,7 @@ export class BlogCommentsComponent implements OnInit {
     }
 
     onCommentHandler(form: NgForm): void {
-        const newComment = {
+        const newComment: NewComment = {
             comment: form.value.comment,
             blogId: this.id
         }
@@ -45,7 +46,7 @@ export class BlogCommentsComponent implements OnInit {
         form.reset();
     }
 
-    onCreateComment(newComment: any) {
+    onCreateComment(newComment: NewComment) {
         this.commentsService.createComment(newComment).subscribe({
             next: () => {
                 this.loadComments();

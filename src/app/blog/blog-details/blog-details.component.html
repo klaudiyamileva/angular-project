@@ -2,9 +2,9 @@
     <div class="modal">
         <img src="{{ blog?.imageUrl }}" alt="" />
         <div class="modal-desc">
-            <div class="category">From: {{ user?.username }}</div>
+            <div class="owner">From: {{ user?.username }}</div>
 
-            <div *ngIf="isOwner">
+            <div class="buttons" *ngIf="isOwner">
                 <button
                     [routerLink]="['/blog', blog?._id, 'edit']"
                     class="edit-btn"

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Comment } from 'src/app/types/comment';
 import * as request from '../../shared/requester';
+import { NewComment } from 'src/app/types/newComment';
 
 const baseUrl = 'http://localhost:3030/data/comments';
 
@@ -9,7 +10,7 @@ const baseUrl = 'http://localhost:3030/data/comments';
     providedIn: 'root',
 })
 export class BlogCommentsService {
-    createComment(commentData: string): Observable<Comment> {
+    createComment(commentData: NewComment): Observable<Comment> {
         return request.post(baseUrl, commentData);
     }
 
