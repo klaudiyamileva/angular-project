@@ -7,26 +7,21 @@ import { BlogEditComponent } from './blog-edit/blog-edit.component';
 
 const routes: Routes = [
     {
-        path: 'blog',
-        children: [
-            {
-                path: '',
-                pathMatch: 'full',
-                component: BlogCatalogComponent,
-            },
-            {
-                path: 'add',
-                component: BlogAddComponent,
-            },
-            {
-                path: ':blogId',
-                component: BlogDetailsComponent,
-            },
-            {
-                path: ':blogId/edit',
-                component: BlogEditComponent,
-            },
-        ],
+        path: '',
+        pathMatch: 'full',
+        component: BlogCatalogComponent,
+    },
+    {
+        path: 'add', 
+        component: BlogAddComponent,
+    },
+    {
+        path: ':blogId', 
+        component: BlogDetailsComponent,
+    },
+    {
+        path: ':blogId/edit', 
+        component: BlogEditComponent,
     },
 ];
 
