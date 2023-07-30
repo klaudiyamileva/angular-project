@@ -90,3 +90,7 @@ a {
     font-style: var(--font-2);
     color: var(--color-1-darkest);
 }
+
+.error-message {
+    color: var(--color-error-content);
+}

@@ -12,11 +12,12 @@ import { AuthService } from 'src/app/shared/services/auth.service';
 })
 export class LoginComponent {
     appEmailDomains = DEFAULT_EMAIL_DOMAINS;
+    errorMessage: string = '';
 
     constructor(
         private authenticationService: AuthenticationService,
         private authService: AuthService,
-        private router: Router,
+        private router: Router
     ) {}
 
     onSubmit(form: NgForm): void {
@@ -27,15 +28,20 @@ export class LoginComponent {
 
             this.authenticationService
                 .login(email, username, password)
-                .subscribe(
-                    (authData: any) => {
+                .subscribe({
+                    next: (authData: any) => {
                         this.authService.userLogin(authData);
                         this.router.navigate(['/home']);
                     },
-                    (error) => {
-                        this.router.navigate(['/login']);
+                    error: (error) => {
+                        const errorData = JSON.parse(error.message || {});
+                        if (errorData.code === 403) {
+                            this.errorMessage = errorData.message;
+                        } else {
+                            this.router.navigate(['/login']);
+                        }
                     },
-                );
+                });
         }
     }
 }

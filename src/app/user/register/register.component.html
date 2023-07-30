@@ -104,6 +104,10 @@
                 </p>
             </ng-container>
 
+            <div *ngIf="errorMessage" class="error-message">
+                {{ errorMessage }}
+            </div>
+
             <button [disabled]="form.invalid" type="submit" class="btn">
                 Register
             </button>

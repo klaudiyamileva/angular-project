@@ -14,14 +14,15 @@ import { Router } from '@angular/router';
 export class RegisterComponent {
     appEmailDomains = DEFAULT_EMAIL_DOMAINS;
     passwordsMismatch = false;
+    errorMessage: string = '';
 
     constructor(
         private authenticationService: AuthenticationService,
         private authService: AuthService,
-        private router: Router,
+        private router: Router
     ) {}
 
-    validatePasswords(form: any) {
+    validatePasswords(form: NgForm) {
         this.passwordsMismatch = validatePasswords(form);
     }
 
@@ -33,24 +34,20 @@ export class RegisterComponent {
 
             this.authenticationService
                 .register(email, username, password)
-                .subscribe(
-                    (authData: any) => {
+                .subscribe({
+                    next: (authData: any) => {
                         this.authService.userLogin(authData);
                         this.router.navigate(['/home']);
                     },
-                    (error) => {
-                        this.router.navigate(['/register']);
+                    error: (error) => {
+                        const errorData = JSON.parse(error.message || '{}');
+                        if (errorData.code === 409) {
+                            this.errorMessage = errorData.message;
+                        } else {
+                            this.router.navigate(['/register']);
+                        }
                     },
-                );
-
-            // .then((authData) => {
-            //   this.authService.userLogin(authData);
-            //   this.router.navigate(['/home']);
-            // })
-            // .catch((error) => {
-            //   console.error('Register error:', error);
-            //   this.router.navigate(['/register']);
-            // });
+                });
         }
     }
 }

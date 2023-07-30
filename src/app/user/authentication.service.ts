@@ -27,8 +27,11 @@ export class AuthenticationService {
                 return authData;
             }),
             catchError((error) => {
-                console.log(error);
-                throw error;
+                const errorObj = {
+                    status: error.status,
+                    message: error.message,
+                };
+                throw errorObj;
             }),
         );
     }
@@ -70,8 +73,11 @@ export class AuthenticationService {
                 return authData;
             }),
             catchError((error) => {
-                console.log(error);
-                throw error;
+                const errorObj = {
+                    status: error.status,
+                    message: error.message,
+                };
+                throw errorObj;
             }),
         );
     }

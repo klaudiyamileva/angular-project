@@ -17,6 +17,7 @@ import { FormsModule } from '@angular/forms';
 import { AuthService } from './shared/services/auth.service';
 import { LocalStorageService } from './shared/services/local-storage.service';
 import { BlogService } from './blog/blog.service';
+import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 @NgModule({
     declarations: [
@@ -26,6 +27,7 @@ import { BlogService } from './blog/blog.service';
         ClientsComponent,
         OffersComponent,
         ContactsComponent,
+        PageNotFoundComponent,
     ],
     imports: [
         BrowserModule,
