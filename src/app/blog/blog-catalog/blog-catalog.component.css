@@ -50,7 +50,7 @@
     color: white;
     text-decoration: none;
     text-transform: uppercase;
-    border: 2px solid white;
+    border: 3px solid white;
     padding: 16px 32px;
     background-color: #1c1c24;
     letter-spacing: 0.8px;
@@ -59,7 +59,7 @@
 
 .text-section .add-blog:hover {
     color: var(--color-1);
-    border: 2px solid var(--color-1);
+    border: 3px solid var(--color-1);
 }
 
 .blogs .blogs-wrapper {

@@ -44,7 +44,7 @@ const routes: Routes = [
     {
         path: 'profile',
         component: ProfileComponent,
-        canActivate: [AuthActivate],
+        // canActivate: [AuthActivate],
     },
     {
         path: 'blog',
@@ -53,8 +53,6 @@ const routes: Routes = [
                 (m) => m.BlogRoutingModule
             ),
     },
-
-    // Add the wildcard route at the end of the routes array
     {
         path: '**',
         component: PageNotFoundComponent,
