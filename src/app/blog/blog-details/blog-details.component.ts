@@ -18,7 +18,7 @@ export class BlogDetailsComponent implements OnInit {
     constructor(
         private blogService: BlogService,
         private acticatedRoute: ActivatedRoute,
-        private authService: AuthService,
+        private authService: AuthService
     ) {}
 
     ngOnInit(): void {
@@ -31,7 +31,7 @@ export class BlogDetailsComponent implements OnInit {
 
     get isOwner(): boolean {
         const currUser = this.authService.authData;
-        if(currUser) {
+        if (currUser) {
             return currUser._id === this.blog?._ownerId ? true : false;
         } else {
             return false;
@@ -39,7 +39,6 @@ export class BlogDetailsComponent implements OnInit {
     }
 
     fetchBlog(): void {
-        
         this.blogService.getBlogById(this.id).subscribe({
             next: (result) => {
                 this.blog = result;
@@ -48,8 +47,7 @@ export class BlogDetailsComponent implements OnInit {
             },
             error: (error) => {
                 console.log(error);
-            }
-        })
+            },
+        });
     }
-
 }
