@@ -42,7 +42,7 @@
                 </p>
             </ng-container>
 
-            <button [disabled]="form.invalid" type="submit" class="btn">
+            <button (click)="onSubmit(form)" [disabled]="form.invalid" type="submit" class="btn">
                 Submit
             </button>
         </form>
