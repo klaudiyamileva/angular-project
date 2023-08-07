@@ -11,6 +11,7 @@ import { BlogLikesComponent } from './blog-likes/blog-likes.component';
 import { BlogDeleteComponent } from './blog-delete/blog-delete.component';
 import { BlogCommentsComponent } from './blog-comments/blog-comments.component';
 import { BlogSearchComponent } from './blog-search/blog-search.component';
+import { BlogSortComponent } from './blog-sort/blog-sort.component';
 
 @NgModule({
     declarations: [
@@ -22,6 +23,7 @@ import { BlogSearchComponent } from './blog-search/blog-search.component';
         BlogDeleteComponent,
         BlogCommentsComponent,
         BlogSearchComponent,
+        BlogSortComponent,
     ],
     imports: [CommonModule, RouterModule, FormsModule, BlogRoutingModule],
     exports: [BlogCatalogComponent, BlogDetailsComponent, BlogAddComponent, BlogEditComponent],

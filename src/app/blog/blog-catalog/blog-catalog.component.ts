@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { BlogService } from '../blog.service';
@@ -12,6 +12,8 @@ import { BlogsService } from 'src/app/shared/services/blogs.service';
 })
 export class BlogCatalogComponent implements OnInit {
     blogs: Blog[] = [];
+    areAllBlogsDisplayed: boolean = true;
+    allBlogsLength: number = 0;
 
     constructor(
         private router: Router,
@@ -21,19 +23,32 @@ export class BlogCatalogComponent implements OnInit {
     ) {}
 
     ngOnInit(): void {
+        this.showAllBlogs();
+
+        this.blogsService.blogs$.subscribe((blogs) => {
+            this.blogs = blogs;
+            this.showBackButton();
+        });
+    }
+
+    showAllBlogs(): void {
         this.blogService.getLatestBlogs().subscribe({
             next: (result) => {
-                this.blogs = result;
+                this.allBlogsLength = result.length;
                 this.blogsService.setBlogs(result);
             },
             error: (error) => {
                 console.log(error);
             },
         });
+    }
 
-        this.blogsService.blogs$.subscribe((blogs) => {
-            this.blogs = blogs;
-        });
+    showBackButton(): void {
+        if (this.blogs.length !== 0 && this.blogs.length < this.allBlogsLength) {
+            this.areAllBlogsDisplayed = false;
+        } else {
+            this.areAllBlogsDisplayed = true;
+        }
     }
 
     get isAuth(): boolean {

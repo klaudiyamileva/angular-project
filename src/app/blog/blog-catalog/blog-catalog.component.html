@@ -20,8 +20,15 @@
             </button>
         </div>
 
-        <app-blog-search />
+        <div>
+            <app-blog-search />
+        </div>
     </div>
+
+    <button (click)="showAllBlogs()" class="back" *ngIf="!areAllBlogsDisplayed">
+        <i class="fas fa-chevron-left"></i>
+        <div>BACK TO ALL BLOGS</div>
+    </button>
 
     <div class="blogs">
         <div class="blogs-wrapper">

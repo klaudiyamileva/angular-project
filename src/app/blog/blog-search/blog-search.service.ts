@@ -11,9 +11,11 @@ const baseUrl = 'http://localhost:3030/data/blogs';
 export class BlogSearchService {
 
   searchBlog(searchedBlog: string): Observable<Blog[]> {
-    const search = encodeURIComponent(` LIKE "${searchedBlog}"`);
+    // const search = encodeURIComponent(` LIKE "${searchedBlog}"`);
+    // return request.get(`${baseUrl}?where=title${search}`);
 
-    return request.get(`${baseUrl}?where=title${search}`);
+    const search = encodeURIComponent(` LIKE "${searchedBlog}"`);
+    return request.get(`${baseUrl}?where=title${search} OR category${search}`);
   }
   
 }
