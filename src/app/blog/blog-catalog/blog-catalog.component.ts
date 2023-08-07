@@ -21,10 +21,6 @@ export class BlogCatalogComponent implements OnInit {
     ) {}
 
     ngOnInit(): void {
-        this.blogsService.blogs$.subscribe((blogs) => {
-            this.blogs = blogs;
-        });
-
         this.blogService.getLatestBlogs().subscribe({
             next: (result) => {
                 this.blogs = result;
@@ -33,6 +29,10 @@ export class BlogCatalogComponent implements OnInit {
             error: (error) => {
                 console.log(error);
             },
+        });
+
+        this.blogsService.blogs$.subscribe((blogs) => {
+            this.blogs = blogs;
         });
     }
 

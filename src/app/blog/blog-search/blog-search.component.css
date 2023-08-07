@@ -24,3 +24,8 @@
 .search-btn:hover {
     cursor: pointer;
 }
+
+p {
+    color: var(--color-1);
+    padding-top: 20px;
+}

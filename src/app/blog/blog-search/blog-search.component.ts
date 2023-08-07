@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { BlogSearchService } from './blog-search.service';
 import { BlogsService } from 'src/app/shared/services/blogs.service';
+import { BlogService } from '../blog.service';
 
 @Component({
     selector: 'app-blog-search',
@@ -11,7 +12,10 @@ import { BlogsService } from 'src/app/shared/services/blogs.service';
 export class BlogSearchComponent {
     isFound: boolean = true;
 
-    constructor(private blogSearch: BlogSearchService, private blogsService: BlogsService) {}
+    constructor(
+        private blogSearch: BlogSearchService,
+        private blogsService: BlogsService
+    ) {}
 
     onSearchSubmit(searchForm: NgForm) {
         const searchedTitle = searchForm.value.search;
@@ -30,5 +34,7 @@ export class BlogSearchComponent {
                 this.isFound = false;
             },
         });
+
+        searchForm.reset();
     }
 }
