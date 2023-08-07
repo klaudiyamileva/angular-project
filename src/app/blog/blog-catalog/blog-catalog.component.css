@@ -148,3 +148,30 @@
     font-size: 18px;
     font-weight: bold;
 }
+
+.search-input {
+    background-color: #1c1c24;
+    border: none;
+    border-bottom: 3px solid white;
+    margin-top: 36px;
+    padding: 8px;
+    color: white;
+}
+
+.search-input::placeholder {
+    color: white;
+    font-family: var(--font-2);
+}
+
+.search-btn {
+    background-color: var(--color-1);
+    border: none;
+    border-bottom: 3px solid var(--color-1);
+    margin-top: 36px;
+    padding: 8px 24px;
+    color: white;
+}
+
+.search-btn:hover {
+    cursor: pointer;
+}
