@@ -3,8 +3,7 @@ import { Router } from '@angular/router';
 import { AuthService } from 'src/app/shared/services/auth.service';
 import { BlogService } from '../blog.service';
 import { Blog } from 'src/app/types/blog';
-import { BlogSearchService } from 'src/app/shared/services/blog-search.service';
-import { NgForm } from '@angular/forms';
+import { BlogsService } from 'src/app/shared/services/blogs.service';
 
 @Component({
     selector: 'app-blog-catalog',
@@ -13,44 +12,28 @@ import { NgForm } from '@angular/forms';
 })
 export class BlogCatalogComponent implements OnInit {
     blogs: Blog[] = [];
-    isFound: boolean = true;
 
     constructor(
         private router: Router,
         private authService: AuthService,
         private blogService: BlogService,
-        private blogSearch: BlogSearchService,
+        private blogsService: BlogsService
     ) {}
 
     ngOnInit(): void {
+        this.blogsService.blogs$.subscribe((blogs) => {
+            this.blogs = blogs;
+        });
+
         this.blogService.getLatestBlogs().subscribe({
             next: (result) => {
                 this.blogs = result;
-                console.log(this.blogs);
+                this.blogsService.setBlogs(result);
             },
             error: (error) => {
                 console.log(error);
             },
         });
-    }
-
-    onSearchSubmit(searchForm: NgForm) {
-        const searchedTitle = searchForm.value.search;
-
-        this.blogSearch.searchBlog(searchedTitle).subscribe({
-            next: (result) => {
-                if(result.length > 0) {
-                    this.isFound = true;
-                    this.blogs = result;
-                } else {
-                    this.isFound = false;
-                }
-            },
-            error: (erorr) => {
-                console.log(erorr);
-                this.isFound = false;
-            }
-        })
     }
 
     get isAuth(): boolean {

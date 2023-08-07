@@ -20,23 +20,7 @@
             </button>
         </div>
 
-        <form #searchForm="ngForm" class="search-form">
-            <input
-                #inputSearch="ngModel"
-                ngModel
-                required
-                type="text"
-                id="search"
-                class="search-input"
-                placeholder="Search..."
-                name="search"
-            />
-            <button (click)="onSearchSubmit(searchForm)" [disabled]="searchForm.invalid" type="submit" class="search-btn">
-                Search
-            </button>
-        
-            <p *ngIf="!isFound">There are no blogs with this title</p>
-        </form>
+        <app-blog-search />
     </div>
 
     <div class="blogs">

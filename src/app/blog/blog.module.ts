@@ -10,6 +10,7 @@ import { BlogEditComponent } from './blog-edit/blog-edit.component';
 import { BlogLikesComponent } from './blog-likes/blog-likes.component';
 import { BlogDeleteComponent } from './blog-delete/blog-delete.component';
 import { BlogCommentsComponent } from './blog-comments/blog-comments.component';
+import { BlogSearchComponent } from './blog-search/blog-search.component';
 
 @NgModule({
     declarations: [
@@ -20,6 +21,7 @@ import { BlogCommentsComponent } from './blog-comments/blog-comments.component';
         BlogLikesComponent,
         BlogDeleteComponent,
         BlogCommentsComponent,
+        BlogSearchComponent,
     ],
     imports: [CommonModule, RouterModule, FormsModule, BlogRoutingModule],
     exports: [BlogCatalogComponent, BlogDetailsComponent, BlogAddComponent, BlogEditComponent],
