@@ -1,0 +1,15 @@
+label {
+    color: #fff;
+    padding-right: 8px;
+}
+
+select {
+    background-color: #1c1c24;
+    color: #fff;
+    padding: 8px 16px;
+    border: 3px solid white;
+}
+
+option {
+    padding: 16px auto;
+}

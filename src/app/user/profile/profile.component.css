@@ -27,7 +27,10 @@
 }
 
 .blogs .blogs-wrapper .blog {
-    width: 33.33%;
+    width: 33%;
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
 }
 
 .blog {
@@ -36,8 +39,16 @@
     cursor: pointer;
 }
 
+.blog .image-wrapper {
+    width: 100%;
+    overflow: hidden;
+}
+
 .blog .image-wrapper img {
     transition: transform 0.3s ease;
+    width: 100%;
+    aspect-ratio: 1;
+    object-fit: cover;
 }
 
 .blog:hover .image-wrapper img {
