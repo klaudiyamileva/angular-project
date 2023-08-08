@@ -21,7 +21,7 @@ export class BlogService {
 
     getBlogByOwnerId(ownerId: string): Observable<Blog[]> {
         const search = encodeURIComponent(`_ownerId="${ownerId}"`);
-        return request.get(`${baseUrl}/?where=${search}`);
+        return request.get(`${baseUrl}/?where=${search}&sortBy=_createdOn desc`);
     }
 
     createBlog(blogData: Blog): Observable<Blog> {
