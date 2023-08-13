@@ -1,27 +1,54 @@
-# MyProject
+Angular Project Documentation
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.
+Table of Contents
+1. Introduction
+2. Project Overview
+3. Prerequisites
+4. Installation and Setup
+5. Usage
+6. Features
 
-## Development server
+Introduction
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Welcome to the documentation for the GitHub Angular project created for educational purposes. This project serves as a marketing agency site where logged-in users can post blogs, like other users' blogs, and leave comments. The project utilizes the SoftUni Practice Service to enhance the learning experience.
 
-## Code scaffolding
+Project Overview
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The project is an Angular-based web application that simulates a marketing agency site. It focuses on providing a platform for users to publish blogs, like and comment on other users' blogs, and engage in discussions. The primary purpose of this project is to educate users about building Angular applications and interacting with APIs.
 
-## Build
+Prerequisites
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Before you begin, ensure you have the following prerequisites:
+Node.js installed (v14.0.0 or higher)
+Angular CLI installed (npm install -g @angular/cli)
+Basic understanding of Angular, TypeScript, and web development concepts
 
-## Running unit tests
+Installation and Setup
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+1. Navigate to the server.js folder:
+cd server
 
-## Running end-to-end tests
+2. Start the Node.js server:
+node server.js
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+3. Open a new terminal window and go back to the project folder:
+cd ..
 
-## Further help
+4. Start the Angular development server:
+ng serve
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+5. Access the application in your web browser at http://localhost:4200.
+
+Usage
+Once the application is up and running, you can explore the various features:
+ - Login and Registration: Create an account or log in using your credentials.
+ - Create a Blog Post: Logged-in users can create and publish blog posts.
+ - Like Blogs: Users can like blogs posted by other users.
+ - Leave Comments: Engage in discussions by leaving comments on blogs.
+
+Features
+ - User authentication and authorization for secure access.
+ - API integration with the SoftUni Practice Service for educational purposes.
+ - Blog creation, liking, and commenting functionality.
+ - Responsive design for optimal user experience on various devices.
+
